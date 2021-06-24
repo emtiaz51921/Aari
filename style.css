@@ -1,0 +1,576 @@
+/*
+Theme Name: Aari
+Theme URI:
+Author: Imtiaz Shamim
+Author URI: https://imtiazshamim.com/
+Description: Aari is a theme of Blog Way. It is a minimalistic WordPress theme dedicated to blogs. Aari provides a responsive layout with unlimited colors. It allows you to change the way you introduce posts for pictures and texts for an appealing look. It is modern, clean, colorful and responsive. The feature includes a full-width template, sidebar template, custom widgets, post carousel, image lightbox, etc.
+Version: 3.0.2
+Tested up to: 5.4.1
+Requires PHP: 5.5
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: aari
+Tags: one-column, two-columns, right-sidebar, custom-background, custom-logo, custom-header, custom-colors, custom-menu, featured-images, threaded-comments, editor-style, translation-ready, blog, portfolio
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+
+aari is based on Underscores http://underscores.me/, (C) 2012-2016 Automattic, Inc.
+Underscores is distributed under the terms of the GNU GPL v2 or later.
+
+Normalizing styles have been helped along thanks to the fine work of
+Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
+*/
+
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+# Normalize
+# Typography
+# Elements
+# Forms
+# Navigation
+		## Links
+		## Menus
+# Accessibility
+# Alignments
+# Widgets
+# Content
+		## Posts and pages
+		## Comments
+# Infinite scroll
+# Media
+		## Captions
+		## Galleries
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+# Normalize
+--------------------------------------------------------------*/
+html {
+	font-family: sans-serif;
+	-webkit-text-size-adjust: 100%;
+	-ms-text-size-adjust: 100%;
+}
+body {
+	margin: 0;
+}
+article, aside, details, figcaption, figure, footer, header, main, menu, nav, section, summary {
+	display: block;
+}
+audio, canvas, progress, video {
+	display: inline-block;
+	vertical-align: baseline;
+}
+audio:not([controls]) {
+	display: none;
+	height: 0;
+}
+[hidden], template {
+	display: none;
+}
+a {
+	background-color: transparent;
+	color: #fd4145;
+}
+a:active, a:hover {
+	outline: 0;
+}
+abbr[title] {
+	border-bottom: 1px dotted;
+}
+dfn {
+	font-style: italic;
+}
+mark {
+	background: #ff0;
+	color: #000;
+}
+small {
+	font-size: 80%;
+}
+sub, sup {
+	font-size: 75%;
+	line-height: 0;
+	position: relative;
+	vertical-align: baseline;
+}
+sup {
+	top: -0.5em;
+}
+sub {
+	bottom: -0.25em;
+}
+img {
+	border: 0;
+}
+svg:not(:root) {
+	overflow: hidden;
+}
+figure {
+	margin: 1em 40px;
+}
+hr {
+	box-sizing: content-box;
+	height: 0;
+}
+pre {
+	overflow: auto;
+}
+code, kbd, pre, samp {
+	font-family: monospace, monospace;
+	font-size: 1em;
+}
+button, input, optgroup, select, textarea {
+	color: inherit;
+	font: inherit;
+	margin: 0;
+}
+button {
+	overflow: visible;
+}
+button, select {
+	text-transform: none;
+}
+button, html input[type="button"], input[type="reset"], input[type="submit"] {
+	-webkit-appearance: button;
+	cursor: pointer;
+}
+button[disabled], html input[disabled] {
+	cursor: default;
+}
+button::-moz-focus-inner, input::-moz-focus-inner {
+	border: 0;
+	padding: 0;
+}
+input {
+	line-height: normal;
+}
+input[type="checkbox"], input[type="radio"] {
+	box-sizing: border-box;
+	padding: 0;
+}
+input[type="number"]::-webkit-inner-spin-button, input[type="number"]::-webkit-outer-spin-button {
+	height: auto;
+}
+input[type="search"]::-webkit-search-cancel-button, input[type="search"]::-webkit-search-decoration {
+	-webkit-appearance: none;
+}
+fieldset {
+	border: 1px solid #c0c0c0;
+	margin: 0 2px;
+	padding: 0.35em 0.625em 0.75em;
+}
+legend {
+	border: 0;
+	padding: 0;
+}
+textarea {
+	overflow: auto;
+}
+optgroup {
+	font-weight: bold;
+}
+li > ul, li > ol {
+	padding-left: 2rem;
+}
+ul, ol {
+	margin: 0 0 28px 0;
+	padding: 0;
+}
+ul {
+	list-style: disc;
+}
+ol {
+	list-style: decimal;
+}
+li > ul, li > ol {
+	margin: 0 0 0 23px;
+}
+.entry-content li, .comment-content li, .mu_register li {
+	margin: 0 0 0 36px;
+	margin: 0 0 0 2.571428571rem;
+}
+.entry-content ol, .comment-content ol, .entry-content ul, .comment-content ul, .mu_register ul {
+	margin: 0 0 24px;
+	margin: 0 0 1.714rem;
+	line-height: 1.714285714;
+}
+.entry-content ul ul, .comment-content ul ul, .entry-content ol ol, .comment-content ol ol, .entry-content ul ol, .comment-content ul ol, .entry-content ol ul, .comment-content ol ul {
+	margin-bottom: 0;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+	margin-bottom: 20px;
+}
+td, th {
+	padding: 0;
+}
+td, th {
+	border: 1px solid #ddd;
+	padding: 8px;
+}
+tr:hover {
+	background-color: #ddd;
+}
+th {
+	padding-top: 12px;
+	padding-bottom: 12px;
+	text-align: left;
+}
+.entry-content dl, .comment-content dl {
+	margin: 0 24px;
+	margin: 0 1.714285714rem;
+}
+.entry-content dt, .comment-content dt {
+	font-weight: bold;
+	line-height: 1.714285714;
+}
+dd {
+	margin: 0 1rem 1rem !important;
+}
+.format-quote blockquote {
+	border-left: 2px solid #fd4145;
+	margin-left: 0;
+	padding: 0 0 0 1rem;
+}
+.entry-content dd, .comment-content dd {
+	line-height: 1.714285714;
+	margin-bottom: 24px;
+	margin-bottom: 1.714285714rem;
+}
+.entry-content address, .comment-content address {
+	display: block;
+	line-height: 1.714285714;
+	margin: 0 0 24px;
+	margin: 0 0 1.714285714rem;
+	font-style: italic;
+}
+.entry-content abbr, .comment-content abbr, .entry-content dfn, .comment-content dfn, .entry-content acronym, .comment-content acronym {
+	border-bottom: 1px dotted #666 !important;
+	cursor: help;
+}
+.entry-content del {
+	text-decoration: line-through !important;
+}
+ins {
+	background: #fff9c0;
+	text-decoration: none;
+}
+.entry-content img {
+}
+/*-------------------------------------------------------------- # Forms --------------------------------------------------------------*/
+button, input[type="button"], input[type="reset"], input[type="submit"] {
+	border: 1px solid;
+	border-color: #ccc #ccc #bbb;
+	border-radius: 3px;
+	background: #e6e6e6;
+	color: rgba(0, 0, 0, 0.8);
+	font-size: 12px;
+	font-size: 0.75rem;
+	line-height: 1;
+	padding: .6em 1em .4em;
+}
+button:hover, input[type="button"]:hover, input[type="reset"]:hover, input[type="submit"]:hover {
+	border-color: #ccc #bbb #aaa;
+}
+button:active, button:focus, input[type="button"]:active, input[type="button"]:focus, input[type="reset"]:active, input[type="reset"]:focus, input[type="submit"]:active, input[type="submit"]:focus {
+	border: 1px dashed #fd4145;
+	box-shadow: 2px 2px 2px #6c6c6c;
+}
+input[type="text"], input[type="email"], input[type="url"], input[type="password"], input[type="search"], input[type="number"], input[type="tel"], input[type="range"], input[type="date"], input[type="month"], input[type="week"], input[type="time"], input[type="datetime"], input[type="datetime-local"], input[type="color"], textarea {
+	color: #666;
+	border: 1px solid #ccc;
+	border-radius: 3px;
+	padding: 3px;
+}
+input[type="text"]:focus, input[type="email"]:focus, input[type="url"]:focus, input[type="password"]:focus, input[type="search"]:focus, input[type="number"]:focus, input[type="tel"]:focus, input[type="range"]:focus, input[type="date"]:focus, input[type="month"]:focus, input[type="week"]:focus, input[type="time"]:focus, input[type="datetime"]:focus, input[type="datetime-local"]:focus, input[type="color"]:focus, textarea:focus {
+	color: #111;
+	border: 1px dashed #fd4145;
+	box-shadow: 2px 2px 2px #6c6c6c;
+}
+select {
+	border: 1px solid #ccc;
+}
+textarea {
+	width: 100%;
+}
+/*-------------------------------------------------------------- # Accessibility --------------------------------------------------------------*/
+/* Text meant only for screen readers. */
+.screen-reader-text {
+	border: 0;
+	clip: rect(1px, 1px, 1px, 1px);
+	clip-path: inset(50%);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute !important;
+	width: 1px;
+	word-wrap: normal !important;
+	/* Many screen reader and browser combinations announce broken words as they would appear visually. */
+}
+.screen-reader-text:focus {
+	background-color:#fd4145;
+	border-radius: 3px;
+	box-shadow: 0px 1px 3px 0px rgba(106, 106, 106, 0.6);
+	clip: auto !important;
+	clip-path: none;
+	color:#fff;
+	display: block;
+	font-size: 14px;
+	font-size: 0.875rem;
+	font-weight: 400;
+	height: auto;
+	right: 20px;
+	line-height: normal;
+	padding: 10px 15px 10px;
+	text-decoration: none;
+	top: 20px;
+	width: auto;
+	z-index: 100000;
+	border: 1px solid #fd4145;
+}
+/* Do not show the outline on the skip link target. */
+#primary[tabindex="-1"]:focus {
+	outline: 0;
+}
+/*-------------------------------------------------------------- # Alignments --------------------------------------------------------------*/
+.alignleft {
+	float: left;
+	margin: 7px 28px 28px 0;
+}
+.alignright {
+	float: right;
+	margin: 7px 0 28px 28px;
+}
+.aligncenter {
+	clear: both;
+	display: block;
+	margin: 7px auto;
+}
+.alignleft, .alignright {
+	/* Let's work to make this !important unnecessary */
+}
+.alignleft figcaption {
+	clear: left;
+}
+.alignright figcaption {
+	clear: right;
+}
+.alignleft img, .alignleft figcaption {
+	float: left;
+	margin-right: 1.5em;
+}
+.alignright img {
+	float: right;
+	margin-left: 1.5em;
+}
+.alignright figcaption {
+	float: none;
+	padding-top: 5px;
+}
+.aligncenter {
+	clear: both;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+.entry-content img, .comment-content img, .widget img, img.header-image, .author-avatar img, img.wp-post-image {
+	border-radius: 3px;
+	box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+}
+.entry-content img {
+	height: auto;
+	width: auto;
+}
+img.alignleft, .wp-caption.alignleft {
+	margin: 12px 24px 12px 0;
+	margin: 0.857142857rem 1.714285714rem 0.857142857rem 0;
+}
+article.format-aside .aside {
+	padding: 24px 24px 0;
+	padding: 1.714285714rem;
+	background: #d2e0f9;
+	border-left: 22px solid #a8bfe8;
+}
+.sidebar .menu {
+	list-style: none;
+	margin: 0px;
+	padding: 0px;
+}
+.sidebar .menu ul {
+	list-style: none;
+	margin: 0px;
+	padding: 0px;
+}
+.sidebar .menu li {
+	list-style: none;
+	margin: 0px;
+	padding: 0px;
+	line-height: 1.6em;
+}
+/*-------------------------------------------------------------- # Widgets --------------------------------------------------------------*/
+.widget-area {
+	width: 25%;
+}
+.widget {
+	margin: 0 0 1.5em;
+	/* Make sure select elements fit in widgets. */
+}
+.widget select {
+	max-width: 100%;
+}
+/*-------------------------------------------------------------- # Infinite scroll --------------------------------------------------------------*/
+/* Globally hidden elements when Infinite Scroll is supported and in use. */
+.infinite-scroll .posts-navigation, .infinite-scroll.neverending .site-footer {
+	/* Theme Footer (when set to scrolling) */
+	display: none;
+}
+/* When Infinite Scroll has reached its end we need to re-display elements that were hidden (via .neverending) before. */
+.infinity-end.neverending .site-footer {
+	display: block;
+}
+/*-------------------------------------------------------------- # Media --------------------------------------------------------------*/
+.page-content .wp-smiley, .entry-content .wp-smiley, .comment-content .wp-smiley {
+	border: none;
+	margin-bottom: 0;
+	margin-top: 0;
+	padding: 0;
+}
+/* Make sure embeds and iframes fit their containers. */
+embed, iframe, object {
+	max-width: 100%;
+}
+/* Make sure logo link wraps around logo image. */
+.custom-logo-link {
+	display: inline-block;
+}
+/*-------------------------------------------------------------- ## Captions --------------------------------------------------------------*/
+.wp-caption {
+	margin-bottom: 1.5em;
+	max-width: 100%;
+}
+.wp-caption img[class*="wp-image-"] {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+.wp-caption .wp-caption-text {
+	margin: 0.8075em 0;
+	font-size: 14px;
+	color: #797979;
+}
+.wp-caption-text {
+	text-align: center;
+}
+/*-------------------------------------------------------------- ## Galleries --------------------------------------------------------------*/
+.gallery {
+	margin-bottom: 1.5em;
+}
+.gallery-item {
+	display: inline-block;
+	text-align: center;
+	vertical-align: top;
+	width: 100%;
+}
+.gallery .gallery-icon img {
+	height: auto;
+	max-width: 100%;
+	width: 90%
+}
+.gallery .gallery-icon a {
+	width: 100%
+}
+.gallery-caption {
+}
+.gallery-columns-2 .gallery-item {
+	max-width: 50%;
+}
+.gallery-columns-3 .gallery-item {
+	max-width: 33.3333333333%;
+}
+.gallery-columns-4 .gallery-item {
+	max-width: 25%;
+}
+.gallery-columns-5 .gallery-item {
+	max-width: 20%;
+}
+.gallery-columns-6 .gallery-item {
+	max-width: 16.6666666667%;
+}
+.gallery-columns-7 .gallery-item {
+	max-width: 14.2857142857%;
+}
+.gallery-columns-8 .gallery-item {
+	max-width: 12.5%;
+}
+.gallery-columns-9 .gallery-item {
+	max-width: 11.1111111111%;
+}
+.gallery-caption {
+	display: block;
+}
+/* =Single audio/video attachment view -------------------------------------------------------------- */
+.attachment .entry-content .mejs-audio {
+	max-width: 400px;
+}
+.attachment .entry-content .mejs-container {
+	margin-bottom: 24px;
+}
+.mejs-container {
+	width: 650px !important;
+}
+/*-------------------------------------------------------------- # Others --------------------------------------------------------------*/
+.main_p .entry_header_small .tagcloud span.namee {
+	font-weight: 500;
+	font-size: 14px;
+}
+.main_p .entry_header_small .catloud {
+	margin-bottom: 10px;
+}
+figure {
+	width: auto;
+}
+.post_info_wrapper {
+	display: inline-block;
+	width: 100%;
+}
+.post_info_wrapper .page-links {
+	clear: both;
+}
+.entry-content .post_bottom_meta {
+	margin-bottom: 20px;
+}
+.bypostauthor {
+	-webkit-font-smoothing: antialiased;
+	display: inline-block;
+	font-size: 15px;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	line-height: 1;
+	speak: none;
+	text-align: left;
+	text-decoration: inherit;
+	text-transform: none;
+	vertical-align: top;
+}
+.navbar-brand:focus {
+	border: 1px dashed #fd4145;
+	box-shadow: 2px 2px 2px #6c6c6c;
+}
+.header-overlay .navbar a.navbar-brand:focus > img {
+	border: 1px dashed #fd4145;
+	box-shadow: 3px 3px 5px #626161;
+}
+#content {
+	overflow: hidden;
+}
+#comments img {
+	width: auto;
+}
+#sidebar img {
+	width: auto;
+}
