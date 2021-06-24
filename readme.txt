@@ -11,7 +11,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: one-column, two-columns, right-sidebar, custom-background, custom-logo, custom-header, custom-colors, custom-menu, featured-images, threaded-comments, editor-style, translation-ready, blog, portfolio
 
 ====Copyright===
-Aari, Copyright 2020 emtiaz51921
+Aari, Copyright 2021 emtiaz51921
 Aari is distributed under the terms of the GNU GPL .
 
 
@@ -29,6 +29,7 @@ Aari is a theme of Blog Way. It is a minimalistic WordPress theme dedicated to b
 == Frequently Asked Questions ==
 
 = How to install Aari theme=
+
 1. Login your WordPress dashboard.
 2. Go to "Appearance" -> "Theme" and click on "Add New" button.
 3. Click on "Upload Theme" button and choose the theme's zip file you have downloaded.
@@ -147,6 +148,9 @@ https://stocksnap.io/photo/EZIOMSHSX4
 
 
 == Changelog ==
+
+= 3.0.3 - June 23 2021 =
+* Add option for enable accessibility focus color
 
 = 3.0.2 - June 13 2020 =
 * Add theme support for the plugin: Getwid - Gutenberg Blocks
