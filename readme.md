@@ -1,11 +1,11 @@
 # Aari
 
-**Contributors:** emtiaz51921
-**Author URI:** https://imtiazshamim.com/
-**Requires at least:** 4.0
-**Tested up to:** 5.4.1
-**Requires PHP:** 5.5
-**Stable tag:** 3.0.0
+**Contributors:** emtiaz51921  
+**Author URI:** https://imtiazshamim.com/  
+**Requires at least:** 4.0  
+**Tested up to:** 5.4.1  
+**Requires PHP:** 5.5  
+**Stable tag:** 3.0.0  
 **Tags:** one-column, two-columns, right-sidebar, custom-background, custom-logo, custom-header, custom-colors, custom-menu, featured-images, threaded-comments, editor-style, translation-ready, blog, portfolio
 
 ![header](https://raw.githubusercontent.com/emtiaz51921/Aari/master/screenshot.png)
